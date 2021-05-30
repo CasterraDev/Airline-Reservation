@@ -2,22 +2,24 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include <time.h>
 
 struct seatLevel{
-    char level[64];
-    int price;
+    char level[64]; //string to say seatLevel e.g. Economy, First Class
+    int price; //The price of the seat
 };
 
 int main(void){
     int c = -1;
+
     printf("Welcome to the Airline Reservation System\n");
+
     do{
         int tickets = 0,total = 0;
         struct seatLevel *seat;
 
         printf("How many tickets? 0 to exit.\n");
         scanf("%i",&tickets);
+        //If 0 is pressed exit the program
         if (c == 0) return 0;
 
         printf("\n");
@@ -31,12 +33,12 @@ int main(void){
                 return 0;
                 break;
             case 1:
-                printf("HELLO");
+                //Fill the seat level with the correct values
                 strcpy(seat->level,"Economy");
                 seat->price = 100;
-                printf("%s",seat->level);
                 break;
             case 2:
+                //Fill the seat level with the correct values
                 strcpy(seat->level,"First Class");
                 seat->price = 150;
                 break;
@@ -47,14 +49,15 @@ int main(void){
         //Calculate the total
         total = tickets * seat->price;
 
-
-
         printf("\n");
+
+        //Print out the stats to the seats they purchased
         printf("# of Tickets: %i\n",tickets);
         printf("Seat Level: %s\n",seat->level);
-        printf("Total Price: %i\n\n",total);
+        printf("Total Price: %i\n",total);
+        printf("\n");
 
-    }while(!(c == 0));
+    }while(c != 0);
 
     return 0;
 }
