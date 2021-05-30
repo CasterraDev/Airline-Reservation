@@ -20,7 +20,7 @@ int main(void){
         printf("How many tickets? 0 to exit.\n");
         scanf("%i",&tickets);
         //If 0 is pressed exit the program
-        if (c == 0) return 0;
+        if (tickets == 0) return 0;
 
         printf("\n");
 
